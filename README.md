@@ -7,7 +7,7 @@ OpenCore bootloader configuration which allows tu run macOS on ThinkPad X201 wit
 
 
 # What's working ✅
-- [x] CPU Power Management. Thanks to patched LPC device-id ```pci8086,3b07``` -> ```pci8086,3b09``` native power management through appleLPC is fully working like on oryginal MacBookPro6,2. CPU speedstep is working, Turbo Boost is also working - my CPU clock exceeds 3 GHz when needed.
+- [x] CPU Power Management. Thanks to the patched LPC device-id ```pci8086,3b07``` -> ```pci8086,3b09``` and setting SystemProductName to MacBookPro6,2 native power management through appleLPC is fully working like on oryginal MacBookPro6,2. CPU speedstep is working, Turbo Boost is also working - my CPU clock exceeds 3 GHz when needed.
 - [x] Intel HD graphics with QE/CI acceleration
 - [x] USB ports
 - [x] Intel WiFi - thanks to AirportItlwm.kext
