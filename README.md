@@ -32,7 +32,7 @@ OpenCore bootloader configuration which allows tu run macOS on ThinkPad X201 wit
     * Display set to Thinkpad LCD
     * under CPU - Hyper-Threading is Enabled, virtualization and VT-d feature are both disabled.
 
-2) Enter your own PlatformInfo information in ```EFI_for_installation/OC/config.plist``` and ```EFI_after_IntelHD_install/OC/config.plist```. Edit config.plist with [ProperTree](https://github.com/corpnewt/ProperTree) and change the following fields:
+2) Enter your own PlatformInfo information (generatede for MacBookPro11,1 which is supported in BigSur) in ```EFI_for_installation/OC/config.plist``` and ```EFI_after_IntelHD_install/OC/config.plist```. Edit config.plist with [ProperTree](https://github.com/corpnewt/ProperTree) and change the following fields:
     ```
     PlatformInfo -> Generic -> MLB
     PlatformInfo -> Generic -> ROM
@@ -55,15 +55,15 @@ For ThinkPad X201 which not supporting EFI boot there is need to create legacy s
 
     * built-in keyboard not working in OpenCore picker - Currently I don't know how to fix that. For installation process I use USB keyboard.
     * Graphics in install process is really really slow (graphics QE/CI acceleration will be enabled in next step)
-    * For some reason x201 unable to reboots himself. When intallator hangs when trying reboot, just poweroff machine (long pressing power button), and poweron again. Several reboots are required to install the system. This looks as follows:
+    * For some reason x201 unable to reboots himself. When intallator hangs when trying reboot, just power off machine (long pressing power button), and power on again. Several reboots are required to install the system. This looks as follows:
         - start installer (Install MacOS BigSur)
-        - reboot, need poweroff and poweron
+        - reboot, need power off and power on
         - start installer (MacOS installer)
-        - reboot, need poweroff and poweron
+        - reboot, need power off and power on
         - start installer (MacOS installer)
-        - reboot, need poweroff and poweron
+        - reboot, need power off and power on
         - start BigSur
-        - reboot, need poweroff and poweron
+        - reboot, need power off and power on
         - start BigSur (installation is complete)
 
 # Getting graphics QE/CI acceleration work.
@@ -89,7 +89,7 @@ To load patched kext I use OpenCore Legacy Patcher dedicated for old Macs. Fortu
 4) Run OpenCore-Patcher.command from main directory.
     + select 4 (Change Model) and enter ```MacBookPro6,2```
     + select 3 (Post-Install Volume Patch)
-    + poweroff your ThinkPad
+    + power off your ThinkPad
 5) Replace content of EFI directory on EFI partition with files from ```EFI_after_IntelHD_install```
 6) Power on computer - graphics QE/CI acceleration should working now :) macOS on my ThinkPad X201 is running really fast and is pretty usable for web browsing, programming and other tasks :) 
 
