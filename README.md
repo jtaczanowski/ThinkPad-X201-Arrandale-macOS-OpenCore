@@ -69,29 +69,16 @@ For ThinkPad X201 which not supporting EFI boot there is need to create legacy s
 # Getting graphics QE/CI acceleration work.
 Graphics acceleration can be achieved by loading patched kext, thanks to ASentientBot for making it.
 
-To load patched kext I use OpenCore Legacy Patcher dedicated for old Macs. Fortunately with small modification it can be used to load patched kexts for X201.
+To load patched kext I use OpenCore Legacy Patcher dedicated for old Macs. Fortunately it can be used to load patched kexts for X201.
 
 ## How to load patched graphics kexts:
-1) Install Xcode Command Line Tools. Open terminal and enter: ```xcode-select —install```.
-2) Download OpenCore Legacy Patcher. I used version [0.1.7](https://github.com/dortania/OpenCore-Legacy-Patcher/archive/refs/tags/0.1.7.zip) and unzip it.
-3) Comment lines 284 to 290 in Resources/SysPatch.py file. They should look as follows:
-    ```
-            # Misc patches
-            # if self.brightness_legacy is True:
-            #     print("- Installing legacy Brightness Control")
-            #     self.add_brightness_patch()
-
-            # if self.legacy_audio is True:
-            #     print("- Fixing Volume Control Support")
-            #     self.add_audio_patch()
-    ```
-    Above lines are required for old Macs, but not for ThinkPad X201.
-4) Run OpenCore-Patcher.command from main directory.
+1) Download OpenCore Legacy Patcher. I used version [0.2.4](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/download/0.2.4/OpenCore-Patcher-TUI.app.zip) and unzip it.
+3) Run OpenCore-Patcher.
     + select 4 (Change Model) and enter ```MacBookPro6,2```
     + select 3 (Post-Install Volume Patch)
     + power off your ThinkPad
-5) Replace content of EFI directory on EFI partition with files from ```EFI_after_IntelHD_install```
-6) Power on computer - graphics QE/CI acceleration should working now :) macOS on my ThinkPad X201 is running really fast and is pretty usable for web browsing, programming and other tasks :) 
+2) Replace content of EFI directory on EFI partition with files from ```EFI_after_IntelHD_install```
+3) Power on computer - graphics QE/CI acceleration should working now :) macOS on my ThinkPad X201 is running really fast and is pretty usable for web browsing, programming and other tasks :) 
 
 
 
