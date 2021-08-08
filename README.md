@@ -6,7 +6,7 @@ OpenCore bootloader configuration which allows tu run macOS on ThinkPad X201 wit
 
 
 
-# What's working ✅
+# What's working - tested on macOS BigSur 11.5.1 ✅
 - [x] CPU Power Management. Thanks to the patched LPC device-id ```pci8086,3b07``` -> ```pci8086,3b09``` and setting SystemProductName to MacBookPro6,2 native power management through appleLPC is fully working like on oryginal MacBookPro6,2. CPU speedstep is working, Turbo Boost is also working - my CPU clock exceeds 3 GHz when needed.
 - [x] Intel HD graphics with QE/CI acceleration
 - [x] USB ports
@@ -32,7 +32,7 @@ OpenCore bootloader configuration which allows tu run macOS on ThinkPad X201 wit
     * Display set to Thinkpad LCD
     * under CPU - Hyper-Threading is Enabled, virtualization and VT-d feature are both disabled.
 
-2) Enter your own PlatformInfo information (generatede for MacBookPro11,1 which is supported in BigSur) in ```EFI_for_installation/OC/config.plist``` and ```EFI_after_IntelHD_install/OC/config.plist```. Edit config.plist with [ProperTree](https://github.com/corpnewt/ProperTree) and change the following fields:
+2) Enter your own PlatformInfo information (generatede for MacBookPro11,1 which is supported in BigSur) in ```EFI/OC/config.plist```Edit config.plist with [ProperTree](https://github.com/corpnewt/ProperTree) and change the following fields:
     ```
     PlatformInfo -> Generic -> MLB
     PlatformInfo -> Generic -> ROM
@@ -47,7 +47,7 @@ For ThinkPad X201 which not supporting EFI boot there is need to create legacy s
 
 4) Mount EFI partition from installer media [https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment)
 
-5) Copy EFI_for_installation directory to mounted EFI partation, rename EFI_for_installation directory to EFI.
+5) Copy EFI directory to mounted EFI partation.
 
 6) Boot machine from your installation media and intall macOS.
 
@@ -73,13 +73,25 @@ To load patched kext I use OpenCore Legacy Patcher dedicated for old Macs. Fortu
 
 ## How to load patched graphics kexts:
 1) Download OpenCore Legacy Patcher. I used version [0.2.4](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/download/0.2.4/OpenCore-Patcher-TUI.app.zip) and unzip it.
-3) Run OpenCore-Patcher.
+2) Run OpenCore-Patcher.
     + select 4 (Change Model) and enter ```MacBookPro6,2```
     + select 3 (Post-Install Volume Patch)
     + power off your ThinkPad
-2) Replace content of EFI directory on EFI partition with files from ```EFI_after_IntelHD_install```
 3) Power on computer - graphics QE/CI acceleration should working now :) macOS on my ThinkPad X201 is running really fast and is pretty usable for web browsing, programming and other tasks :) 
 
+# Getting CPU Power Management (Intel SpeedStep) work.
+CPU Power Management. Thanks to the patched LPC device-id ```pci8086,3b07``` -> ```pci8086,3b09``` and setting SystemProductName to MacBookPro6,2 native power management through appleLPC is fully working like on oryginal MacBookPro6,2. CPU speedstep is working, Turbo Boost is also working - my CPU clock exceeds 3 GHz when needed.
 
+## How enable  CPU Power Management:
+1) Edit your EFI/OC/config.plist and change SystemProductName to ```MacBookPro6,2```
+
+# Getting macOS OTA updates work
+For SystemProductName in EFI/OC/config.plist set to ```MacBookPro6,2``` OTA updates will not work, because ```MacBookPro6,2``` is not supported by macOS BigSur originally. It is needed to change SystemProductName to actually supported model.
+
+## How update macOS through OTA:
+1) Edit your EFI/OC/config.plist and change SystemProductName to ```MacBookPro11,1```
+2) In system preferences check if are updates available and install it.
+3) Install patched graphics kext if needed (# Getting graphics QE/CI acceleration work).
+3) Restore SystemProductName in EFI/OC/config.plist to ```MacBookPro6,2``` to get CPU Power Management working again.
 
 
