@@ -342,43 +342,7 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string></string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-				<key>Enabled</key>
-				<true/>
-				<key>MinKernel</key>
-				<string></string>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/Lilu</string>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>Lilu.kext</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-				<key>Enabled</key>
-				<true/>
-				<key>MinKernel</key>
-				<string></string>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/VirtualSMC</string>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>VirtualSMC.kext</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
+				<string>AirportItlwm.kext</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
@@ -396,25 +360,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string></string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-				<key>Enabled</key>
-				<true/>
-				<key>MinKernel</key>
-				<string></string>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/AppleALC</string>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>AppleALC.kext</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
+				<string>AppleIntelE1000e.kext</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
@@ -432,7 +378,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string></string>
+				<string>Lilu.kext</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
@@ -442,15 +388,15 @@
 				<key>MinKernel</key>
 				<string></string>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SMCBatteryManager</string>
+				<string>Contents/MacOS/Lilu</string>
 				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
-				<string>SMCBatteryManager.kext</string>
+				<string>Lilu.kext</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string></string>
+				<string>VirtualSMC.kext</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
@@ -460,33 +406,15 @@
 				<key>MinKernel</key>
 				<string></string>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SMCProcessor</string>
+				<string>Contents/MacOS/VirtualSMC</string>
 				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
-				<string>SMCProcessor.kext</string>
+				<string>VirtualSMC.kext</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string></string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-				<key>Enabled</key>
-				<true/>
-				<key>MinKernel</key>
-				<string></string>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SMCSuperIO</string>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>SMCSuperIO.kext</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
+				<string>VoodooPS2Controller.kext</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
@@ -504,7 +432,25 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>WhateverGreen.kext</string>
+				<key>MaxKernel</key>
 				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+				<key>Enabled</key>
+				<true/>
+				<key>MinKernel</key>
+				<string></string>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/WhateverGreen</string>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>WhateverGreen.kext</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>VoodooPS2Keyboard.kext</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
@@ -522,7 +468,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string></string>
+				<string>VoodooPS2Mouse.kext</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
@@ -540,7 +486,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string></string>
+				<string>VoodooPS2Trackpad.kext</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
@@ -558,7 +504,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string></string>
+				<string>AppleALC.kext</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
@@ -568,11 +514,65 @@
 				<key>MinKernel</key>
 				<string></string>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/WhateverGreen</string>
+				<string>Contents/MacOS/AppleALC</string>
 				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
-				<string>WhateverGreen.kext</string>
+				<string>AppleALC.kext</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SMCBatteryManager.kext</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+				<key>Enabled</key>
+				<true/>
+				<key>MinKernel</key>
+				<string></string>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/SMCBatteryManager</string>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>SMCBatteryManager.kext</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SMCProcessor.kext</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+				<key>Enabled</key>
+				<true/>
+				<key>MinKernel</key>
+				<string></string>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/SMCProcessor</string>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>SMCProcessor.kext</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SMCSuperIO.kext</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+				<key>Enabled</key>
+				<true/>
+				<key>MinKernel</key>
+				<string></string>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/SMCSuperIO</string>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>SMCSuperIO.kext</string>
 			</dict>
 		</array>
 		<key>Emulate</key>
@@ -1009,6 +1009,8 @@
 				<string>BootKicker.efi</string>
 				<key>RealPath</key>
 				<false/>
+				<key>Flavour</key>
+				<string>Auto</string>
 				<key>Name</key>
 				<string>BootKicker.efi</string>
 				<key>TextMode</key>
@@ -1027,6 +1029,8 @@
 				<string>ChipTune.efi</string>
 				<key>RealPath</key>
 				<false/>
+				<key>Flavour</key>
+				<string>Auto</string>
 				<key>Name</key>
 				<string>ChipTune.efi</string>
 				<key>TextMode</key>
@@ -1045,6 +1049,8 @@
 				<string>CleanNvram.efi</string>
 				<key>RealPath</key>
 				<false/>
+				<key>Flavour</key>
+				<string>Auto</string>
 				<key>Name</key>
 				<string>CleanNvram.efi</string>
 				<key>TextMode</key>
@@ -1063,6 +1069,8 @@
 				<string>ControlMsrE2.efi</string>
 				<key>RealPath</key>
 				<false/>
+				<key>Flavour</key>
+				<string>Auto</string>
 				<key>Name</key>
 				<string>ControlMsrE2.efi</string>
 				<key>TextMode</key>
@@ -1081,6 +1089,8 @@
 				<string>GopStop.efi</string>
 				<key>RealPath</key>
 				<false/>
+				<key>Flavour</key>
+				<string>Auto</string>
 				<key>Name</key>
 				<string>GopStop.efi</string>
 				<key>TextMode</key>
@@ -1099,6 +1109,8 @@
 				<string>KeyTester.efi</string>
 				<key>RealPath</key>
 				<false/>
+				<key>Flavour</key>
+				<string>Auto</string>
 				<key>Name</key>
 				<string>KeyTester.efi</string>
 				<key>TextMode</key>
@@ -1117,6 +1129,8 @@
 				<string>MmapDump.efi</string>
 				<key>RealPath</key>
 				<false/>
+				<key>Flavour</key>
+				<string>Auto</string>
 				<key>Name</key>
 				<string>MmapDump.efi</string>
 				<key>TextMode</key>
@@ -1135,6 +1149,8 @@
 				<string>OpenControl.efi</string>
 				<key>RealPath</key>
 				<false/>
+				<key>Flavour</key>
+				<string>Auto</string>
 				<key>Name</key>
 				<string>OpenControl.efi</string>
 				<key>TextMode</key>
@@ -1154,7 +1170,7 @@
 				<key>RealPath</key>
 				<false/>
 				<key>Flavour</key>
-				<string>OpenShell:UEFIShell:Shell</string>
+				<string>Auto</string>
 				<key>Name</key>
 				<string>OpenShell.efi</string>
 				<key>TextMode</key>
@@ -1173,6 +1189,8 @@
 				<string>ResetSystem.efi</string>
 				<key>RealPath</key>
 				<false/>
+				<key>Flavour</key>
+				<string>Auto</string>
 				<key>Name</key>
 				<string>ResetSystem.efi</string>
 				<key>TextMode</key>
@@ -1191,6 +1209,8 @@
 				<string>RtcRw.efi</string>
 				<key>RealPath</key>
 				<false/>
+				<key>Flavour</key>
+				<string>Auto</string>
 				<key>Name</key>
 				<string>RtcRw.efi</string>
 				<key>TextMode</key>
@@ -1389,20 +1409,126 @@
 		<true/>
 		<key>Drivers</key>
 		<array>
-			<string>AudioDxe.efi</string>
-			<string>CrScreenshotDxe.efi</string>
-			<string>HfsPlusLegacy.efi</string>
-			<string>HiiDatabase.efi</string>
-			<string>NvmExpressDxe.efi</string>
-			<string>OpenCanopy.efi</string>
-			<string>OpenHfsPlus.efi</string>
-			<string>OpenPartitionDxe.efi</string>
-			<string>OpenRuntime.efi</string>
-			<string>OpenUsbKbDxe.efi</string>
-			<string>Ps2KeyboardDxe.efi</string>
-			<string>Ps2MouseDxe.efi</string>
-			<string>UsbMouseDxe.efi</string>
-			<string>XhciDxe.efi</string>
+			<dict>
+				<key>Path</key>
+				<string>AudioDxe.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>CrScreenshotDxe.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>HfsPlusLegacy.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>HiiDatabase.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>NvmExpressDxe.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>OpenCanopy.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>OpenHfsPlus.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>OpenLinuxBoot.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>OpenPartitionDxe.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>OpenRuntime.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>OpenUsbKbDxe.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>Ps2KeyboardDxe.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>Ps2MouseDxe.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>UsbMouseDxe.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>XhciDxe.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
 		</array>
 		<key>Input</key>
 		<dict>
@@ -1502,6 +1628,8 @@
 			<key>ExitBootServicesDelay</key>
 			<integer>0</integer>
 			<key>ForgeUefiSupport</key>
+			<false/>
+			<key>ForceOcWriteFlash</key>
 			<false/>
 			<key>IgnoreInvalidFlexRatio</key>
 			<true/>
