@@ -1086,6 +1086,26 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>CsrUtil.efi</string>
+				<key>RealPath</key>
+				<false/>
+				<key>Flavour</key>
+				<string>Auto</string>
+				<key>Name</key>
+				<string>CsrUtil.efi</string>
+				<key>TextMode</key>
+				<false/>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+				<key>Path</key>
+				<string>CsrUtil.efi</string>
+				<key>Auxiliary</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>GopStop.efi</string>
 				<key>RealPath</key>
 				<false/>
@@ -1221,6 +1241,26 @@
 				<string></string>
 				<key>Path</key>
 				<string>RtcRw.efi</string>
+				<key>Auxiliary</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>TpmInfo.efi</string>
+				<key>RealPath</key>
+				<false/>
+				<key>Flavour</key>
+				<string>Auto</string>
+				<key>Name</key>
+				<string>TpmInfo.efi</string>
+				<key>TextMode</key>
+				<false/>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+				<key>Path</key>
+				<string>TpmInfo.efi</string>
 				<key>Auxiliary</key>
 				<true/>
 			</dict>
@@ -1244,6 +1284,8 @@
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
+				<key>ForceDisplayRotationInEFI</key>
+				<integer>0</integer>
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
@@ -1254,8 +1296,6 @@
 				<data></data>
 				<key>run-efi-updater</key>
 				<string>No</string>
-				<key>ForceDisplayRotationInEFI</key>
-				<integer>0</integer>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -1318,16 +1358,16 @@
 		<false/>
 		<key>Generic</key>
 		<dict>
-			<key>AdviseWindows</key>
-			<false/>
-			<key>MaxBIOSVersion</key>
+			<key>AdviseFeatures</key>
 			<false/>
 			<key>MLB</key>
 			<string>enter-your-data</string>
+			<key>MaxBIOSVersion</key>
+			<false/>
 			<key>ProcessorType</key>
 			<integer>0</integer>
 			<key>ROM</key>
-			<data>ABEiM0RV</data>
+			<data>ACTXTxQ4</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemMemoryStatus</key>
@@ -1373,12 +1413,12 @@
 			<string>Builtin</string>
 			<key>CustomDelays</key>
 			<false/>
+			<key>GraphicsInputMirroring</key>
+			<true/>
 			<key>KeyInitialDelay</key>
 			<integer>50</integer>
 			<key>KeySubsequentDelay</key>
 			<integer>5</integer>
-			<key>GraphicsInputMirroring</key>
-			<true/>
 			<key>PointerSpeedDiv</key>
 			<integer>1</integer>
 			<key>PointerSpeedMul</key>
@@ -1410,6 +1450,8 @@
 		<key>Drivers</key>
 		<array>
 			<dict>
+				<key>Comment</key>
+				<string>AudioDxe.efi</string>
 				<key>Path</key>
 				<string>AudioDxe.efi</string>
 				<key>Enabled</key>
@@ -1418,6 +1460,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>CrScreenshotDxe.efi</string>
 				<key>Path</key>
 				<string>CrScreenshotDxe.efi</string>
 				<key>Enabled</key>
@@ -1426,6 +1470,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>HfsPlusLegacy.efi</string>
 				<key>Path</key>
 				<string>HfsPlusLegacy.efi</string>
 				<key>Enabled</key>
@@ -1434,6 +1480,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>HiiDatabase.efi</string>
 				<key>Path</key>
 				<string>HiiDatabase.efi</string>
 				<key>Enabled</key>
@@ -1442,6 +1490,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>NvmExpressDxe.efi</string>
 				<key>Path</key>
 				<string>NvmExpressDxe.efi</string>
 				<key>Enabled</key>
@@ -1450,6 +1500,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>OpenCanopy.efi</string>
 				<key>Path</key>
 				<string>OpenCanopy.efi</string>
 				<key>Enabled</key>
@@ -1458,6 +1510,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>OpenHfsPlus.efi</string>
 				<key>Path</key>
 				<string>OpenHfsPlus.efi</string>
 				<key>Enabled</key>
@@ -1466,6 +1520,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>OpenLinuxBoot.efi</string>
 				<key>Path</key>
 				<string>OpenLinuxBoot.efi</string>
 				<key>Enabled</key>
@@ -1474,6 +1530,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>OpenPartitionDxe.efi</string>
 				<key>Path</key>
 				<string>OpenPartitionDxe.efi</string>
 				<key>Enabled</key>
@@ -1482,6 +1540,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>OpenRuntime.efi</string>
 				<key>Path</key>
 				<string>OpenRuntime.efi</string>
 				<key>Enabled</key>
@@ -1490,6 +1550,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>OpenUsbKbDxe.efi</string>
 				<key>Path</key>
 				<string>OpenUsbKbDxe.efi</string>
 				<key>Enabled</key>
@@ -1498,6 +1560,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>Ps2KeyboardDxe.efi</string>
 				<key>Path</key>
 				<string>Ps2KeyboardDxe.efi</string>
 				<key>Enabled</key>
@@ -1506,6 +1570,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>Ps2MouseDxe.efi</string>
 				<key>Path</key>
 				<string>Ps2MouseDxe.efi</string>
 				<key>Enabled</key>
@@ -1514,6 +1580,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>UsbMouseDxe.efi</string>
 				<key>Path</key>
 				<string>UsbMouseDxe.efi</string>
 				<key>Enabled</key>
@@ -1522,6 +1590,8 @@
 				<string></string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>XhciDxe.efi</string>
 				<key>Path</key>
 				<string>XhciDxe.efi</string>
 				<key>Enabled</key>
@@ -1627,9 +1697,9 @@
 			<true/>
 			<key>ExitBootServicesDelay</key>
 			<integer>0</integer>
-			<key>ForgeUefiSupport</key>
-			<false/>
 			<key>ForceOcWriteFlash</key>
+			<false/>
+			<key>ForgeUefiSupport</key>
 			<false/>
 			<key>IgnoreInvalidFlexRatio</key>
 			<true/>
