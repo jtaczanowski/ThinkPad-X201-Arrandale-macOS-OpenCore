@@ -6,7 +6,7 @@ OpenCore bootloader configuration which allows you to run macOS on ThinkPad X201
 
 
 
-# What's working - tested on macOS BigSur 11.6 ✅
+# What's working - tested on macOS BigSur 11.6.1 ✅
 - [x] CPU Power Management. Thanks to the patched LPC device-id ```pci8086,3b07``` -> ```pci8086,3b09``` and setting SystemProductName to MacBookPro6,2 native power management through appleLPC is fully working like on oryginal MacBookPro6,2. CPU speedstep is working, Turbo Boost is also working - my CPU clock exceeds 3 GHz when needed.
 - [x] Intel HD graphics with QE/CI acceleration
 - [x] USB ports
@@ -72,7 +72,7 @@ Graphics acceleration can be achieved by loading patched kext, thanks to ASentie
 To load patched kext I use OpenCore Legacy Patcher dedicated for old Macs. Fortunately it can be used to load patched kexts for X201.
 
 ## How to load patched graphics kexts:
-1) Download OpenCore Legacy Patcher. I used version [0.2.5](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/download/0.2.5/OpenCore-Patcher-TUI.app.zip) and unzip it.
+1) Download OpenCore Legacy Patcher. I used version [0.3.1](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/download/0.3.1/OpenCore-Patcher-TUI.app.zip) and unzip it.
 2) Run OpenCore-Patcher.
     + select 4 (Change Model) and enter ```MacBookPro6,2```
     + select 3 (Post-Install Volume Patch)
