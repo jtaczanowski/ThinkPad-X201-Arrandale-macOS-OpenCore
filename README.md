@@ -72,7 +72,7 @@ Graphics acceleration can be achieved by loading patched kext, thanks to ASentie
 To load patched kext I use OpenCore Legacy Patcher dedicated for old Macs. Fortunately it can be used to load patched kexts for X201.
 
 ## How to load patched graphics kexts:
-1) Download OpenCore Legacy Patcher. I used version [0.3.1](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/download/0.3.1/OpenCore-Patcher-TUI.app.zip) and unzip it.
+1) Download OpenCore Legacy Patcher. I used version [0.3.3](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/download/0.3.3/OpenCore-Patcher-TUI.app.zip) and unzip it.
 2) Run OpenCore-Patcher.
     + select 4 (Change Model) and enter ```MacBookPro6,2```
     + select 3 (Post-Install Volume Patch)
