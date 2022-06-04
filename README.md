@@ -6,7 +6,7 @@ OpenCore bootloader configuration which allows you to run macOS on ThinkPad X201
 
 
 
-# What's working - tested on macOS BigSur 11.6.4 ✅
+# What's working - tested on macOS BigSur 11.6.6 ✅
 - [x] CPU Power Management. Thanks to the patched LPC device-id ```pci8086,3b07``` -> ```pci8086,3b09``` and setting SystemProductName to MacBookPro6,2 native power management through appleLPC is fully working like on oryginal MacBookPro6,2. CPU speedstep is working, Turbo Boost is also working - my CPU clock exceeds 3 GHz when needed.
 - [x] Intel HD graphics with QE/CI acceleration
 - [x] USB ports
@@ -72,7 +72,7 @@ Graphics acceleration can be achieved by loading patched kext, thanks to ASentie
 To load patched kext I use OpenCore Legacy Patcher dedicated for old Macs. Fortunately it can be used to load patched kexts for X201.
 
 ## How to load patched graphics kexts:
-1) Download OpenCore Legacy Patcher. I used version [0.4.2](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/download/0.4.2/OpenCore-Patcher-GUI.app.zip) and unzip it.
+1) Download OpenCore Legacy Patcher. I used version [0.4.5](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/download/0.4.5/OpenCore-Patcher-GUI.app.zip) and unzip it.
 2) Run OpenCore-Patcher.
     + Select "Settings" (Change Model) and choose ```MacBookPro6,2```
     + Select "Non-Metal Settings" and pick "Enable Beta Blur"
@@ -94,6 +94,36 @@ For SystemProductName in EFI/OC/config.plist set to ```MacBookPro6,2``` OTA upda
 2) In system preferences check if are updates available and install it.
 3) Install patched graphics kext if needed (# Getting graphics QE/CI acceleration work).
 3) Restore SystemProductName in EFI/OC/config.plist to ```MacBookPro6,2``` to get CPU Power Management working again.
+
+# Initial macOS Monterey support
+With this OpenCore EFI it is possible to run macOS Monterey on ThinkPad x201 with some issues - which maybe resolved in the future.
+
+To install Monterey you have to edit your EFI/OC/config.plist and change SystemProductName to ```MacBookAir7,1```.
+
+Monterey hangs during booting while power supply is attached to laptop - on unplugged power supply system is booting normally. After system is booted you can attach power supply - the system will now function normally.
+
+⚠️ Monterey is working slower than the Big Sur because of not working CPU power management. CPU is running od lowest frequency (in my case 1,2GHz) - but simple tasks like web browsing are still possible :) ⚠️
+
+
+## What's working - tested on macOS Monterey 12.3.1 ✅
+- [x] Intel HD graphics with QE/CI acceleration
+- [x] USB ports
+- [x] Intel WiFi - thanks to AirportItlwm.kext
+- [x] Speakers, headphones
+- [x] Internal Microphone
+- [x] Battery indicator
+- [x] Trackpad is working (trackpoint sometimes works, sometimes not)
+- [x] SD card reader
+
+## What's not working ⚠️
+- [ ] CPU Power Management. (On BigSur CPU Power Management is fully working - described in BigSur section)
+- [ ] WWAN
+- [ ] Bluetooth
+- [ ] Sleep
+- [ ] Rebooting
+- [ ] VGA port
+
+<img src="/images/ThinkPad-X201-macOS-Monterey.jpg" alt="ThinkPad-X201-macOS-Monterey" height="70%" width="70%">
 
 # Special thanks for cooperation, inspiration, great software and documentation to:
 - [jamesfawcett](https://github.com/jamesfawcett)
