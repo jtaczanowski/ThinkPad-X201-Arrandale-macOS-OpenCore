@@ -96,16 +96,14 @@ For SystemProductName in EFI/OC/config.plist set to ```MacBookPro6,2``` OTA upda
 3) Restore SystemProductName in EFI/OC/config.plist to ```MacBookPro6,2``` to get CPU Power Management working again.
 
 # Initial macOS Monterey support
-With this OpenCore EFI it is possible to run macOS Monterey on ThinkPad x201 with some issues - which maybe resolved in the future.
+With this OpenCore EFI it is possible to run macOS Monterey on ThinkPad x201 with some issues (internal camera and bluetooth are not working) - which maybe will resolved in the future.
 
-To install Monterey you have to edit your EFI/OC/config.plist and change SystemProductName to ```MacBookAir7,1```.
-
-Monterey hangs during booting while power supply is attached to laptop - on unplugged power supply system is booting normally. After system is booted you can attach power supply - the system will now function normally.
-
-⚠️ Monterey is working slower than the Big Sur because of not working CPU power management. CPU is running od lowest frequency (in my case 1,2GHz) - but simple tasks like web browsing are still possible :) ⚠️
+To install Monterey you have to edit your EFI/OC/config.plist and change SystemProductName to ```MacBookAir7,1```. After install change to ```MacBookPro6,2``` to get CPU power management working.
 
 
 ## What's working - tested on macOS Monterey 12.3.1 ✅
+- [x] CPU Power Management. Thanks to the patched LPC device-id ```pci8086,3b07``` -> ```pci8086,3b09``` and setting SystemProductName to MacBookPro6,2 native power management through appleLPC is fully working like on oryginal MacBookPro6,2. CPU speedstep is working, Turbo Boost is also working - my CPU clock exceeds 3 GHz when needed.
+From macOS 12.3 Beta 1 an additional kext ```ASPP-Override.kext``` id needed. More information at this [link](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/resources/build.py#L177)
 - [x] Intel HD graphics with QE/CI acceleration
 - [x] USB ports
 - [x] Intel WiFi - thanks to AirportItlwm.kext
@@ -116,12 +114,13 @@ Monterey hangs during booting while power supply is attached to laptop - on unpl
 - [x] SD card reader
 
 ## What's not working ⚠️
-- [ ] CPU Power Management. (On BigSur CPU Power Management is fully working - described in BigSur section)
 - [ ] WWAN
 - [ ] Bluetooth
 - [ ] Sleep
 - [ ] Rebooting
 - [ ] VGA port
+- [ ] Internal Camera
+
 
 <img src="/images/ThinkPad-X201-macOS-Monterey.jpg" alt="ThinkPad-X201-macOS-Monterey" height="70%" width="70%">
 
