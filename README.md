@@ -28,7 +28,7 @@ OpenCore bootloader configuration which allows you to run macOS on ThinkPad X201
 # Initial macOS Monterey support
 With this OpenCore EFI it is possible to run macOS Monterey on ThinkPad x201 with some issues (internal camera and bluetooth are not working) - which maybe will resolved in the future.
 
-## What's working - tested on macOS Monterey 12.3.1 ✅
+## What's working - tested on macOS Monterey 12.6 ✅
 - [x] CPU Power Management. Thanks to the patched LPC device-id ```pci8086,3b07``` -> ```pci8086,3b09``` and setting SystemProductName to MacBookPro6,2 native power management through appleLPC is fully working like on oryginal MacBookPro6,2. CPU speedstep is working, Turbo Boost is also working - my CPU clock exceeds 3 GHz when needed.
 From macOS 12.3 Beta 1 an additional kext ```ASPP-Override.kext``` id needed. More information at this [link](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/resources/build.py#L177)
 - [x] Intel HD graphics with QE/CI acceleration
@@ -99,11 +99,8 @@ Graphics acceleration can be achieved by loading patched kext, thanks to ASentie
 To load patched kext I use OpenCore Legacy Patcher dedicated for old Macs. Fortunately it can be used to load patched kexts for X201.
 
 ## How to load patched graphics kexts:
-1) Download OpenCore Legacy Patcher. I used version [0.4.5](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/download/0.4.5/OpenCore-Patcher-GUI.app.zip) and unzip it.
+1) Download OpenCore Legacy Patcher. I used version [0.4.11](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/download/0.4.11/OpenCore-Patcher-GUI.app.zip) and unzip it.
 2) Run OpenCore-Patcher.
-    + Select "Settings" (Change Model) and choose ```MacBookPro6,2```
-    + Select "Non-Metal Settings" and pick "Enable Beta Blur"
-    + Click "Return to Main Menu"
     + Run "Post Install Root Patch"
 3) Power on computer - graphics QE/CI acceleration should working now :) macOS on my ThinkPad X201 is running really fast and is pretty usable for web browsing, programming and other tasks :) 
 
