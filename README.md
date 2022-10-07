@@ -25,6 +25,31 @@ OpenCore bootloader configuration which allows you to run macOS on ThinkPad X201
 - [ ] Rebooting
 - [ ] VGA port
 
+# Initial macOS Monterey support
+With this OpenCore EFI it is possible to run macOS Monterey on ThinkPad x201 with some issues (internal camera and bluetooth are not working) - which maybe will resolved in the future.
+
+## What's working - tested on macOS Monterey 12.3.1 ✅
+- [x] CPU Power Management. Thanks to the patched LPC device-id ```pci8086,3b07``` -> ```pci8086,3b09``` and setting SystemProductName to MacBookPro6,2 native power management through appleLPC is fully working like on oryginal MacBookPro6,2. CPU speedstep is working, Turbo Boost is also working - my CPU clock exceeds 3 GHz when needed.
+From macOS 12.3 Beta 1 an additional kext ```ASPP-Override.kext``` id needed. More information at this [link](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/resources/build.py#L177)
+- [x] Intel HD graphics with QE/CI acceleration
+- [x] USB ports
+- [x] Intel WiFi - thanks to AirportItlwm.kext
+- [x] Speakers, headphones
+- [x] Internal Microphone
+- [x] Battery indicator
+- [x] Trackpad is working (trackpoint sometimes works, sometimes not)
+- [x] SD card reader
+
+## What's not working ⚠️
+- [ ] WWAN
+- [ ] Bluetooth
+- [ ] Sleep
+- [ ] Rebooting
+- [ ] VGA port
+- [ ] Internal Camera
+
+
+<img src="/images/ThinkPad-X201-macOS-Monterey.jpg" alt="ThinkPad-X201-macOS-Monterey" height="70%" width="70%">
 
 # Installation procedure
 1) Check your BIOS settings:
@@ -32,14 +57,16 @@ OpenCore bootloader configuration which allows you to run macOS on ThinkPad X201
     * Display set to Thinkpad LCD
     * under CPU - Hyper-Threading is Enabled, virtualization and VT-d feature are both disabled.
 
-2) Enter your own PlatformInfo information (generated for MacBookPro11,1 which is supported in BigSur) in ```EFI/OC/config.plist```Edit config.plist with [ProperTree](https://github.com/corpnewt/ProperTree) and change the following fields:
+2) This step is optionally. You can use values provided in this repo. But if you would like to login to your apple accounts like icloud, imessage, facetime it is recommended to generate and enter your own PlatformInfo.
+
+    Edit config.plist (```EFI/OC/config.plist```) with [ProperTree](https://github.com/corpnewt/ProperTree) and change the following fields:
     ```
-    PlatformInfo -> Generic -> MLB
-    PlatformInfo -> Generic -> ROM
-    PlatformInfo -> Generic -> SystemSerialNumber
-    PlatformInfo -> Generic -> SystemUUID
+    PlatformInfo -> Generic -> MLB (Board Serial in GenSMBIOS)
+    PlatformInfo -> Generic -> ROM (info how to obtain below)
+    PlatformInfo -> Generic -> SystemSerialNumber (Serial in GenSMBIOS)
+    PlatformInfo -> Generic -> SystemUUID (SSmUUID in GenSMBIOS)
     ```
-    Generate new serials with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS). The ROM value is your ethernet (en0) mac address ([more info](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#fixing-en0)).
+    Enter your own PlatformInfo information (generated for MacBookPro6,2) with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS). The ROM value is your ethernet (en0) mac address ([more info](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#fixing-en0)).
 
 
 3) Create installation media as is described in [https://dortania.github.io/OpenCore-Install-Guide/installer-guide/](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/). 
@@ -80,49 +107,12 @@ To load patched kext I use OpenCore Legacy Patcher dedicated for old Macs. Fortu
     + Run "Post Install Root Patch"
 3) Power on computer - graphics QE/CI acceleration should working now :) macOS on my ThinkPad X201 is running really fast and is pretty usable for web browsing, programming and other tasks :) 
 
-# Getting CPU Power Management (Intel SpeedStep) to work.
+# How to update macOS through OTA:
+1) In system preferences check if are updates available and install it.
+2) Install patched graphics kext if needed (# Getting graphics QE/CI acceleration work).
+
+# Information about CPU Power Management (Intel SpeedStep).
 CPU Power Management. Thanks to the patched LPC device-id ```pci8086,3b07``` -> ```pci8086,3b09``` and setting SystemProductName to MacBookPro6,2 native power management through appleLPC is fully working like on original MacBookPro6,2. CPU speedstep is working, Turbo Boost is also working - my CPU clock exceeds 3 GHz when needed.
-
-## How to enable CPU Power Management:
-1) Edit your EFI/OC/config.plist and change SystemProductName to ```MacBookPro6,2```
-
-# Getting macOS OTA updates to work
-For SystemProductName in EFI/OC/config.plist set to ```MacBookPro6,2``` OTA updates will not work, because ```MacBookPro6,2``` is not supported by macOS BigSur originally. It is needed to change SystemProductName to actually supported model.
-
-## How to update macOS through OTA:
-1) Edit your EFI/OC/config.plist and change SystemProductName to ```MacBookPro11,1```
-2) In system preferences check if are updates available and install it.
-3) Install patched graphics kext if needed (# Getting graphics QE/CI acceleration work).
-3) Restore SystemProductName in EFI/OC/config.plist to ```MacBookPro6,2``` to get CPU Power Management working again.
-
-# Initial macOS Monterey support
-With this OpenCore EFI it is possible to run macOS Monterey on ThinkPad x201 with some issues (internal camera and bluetooth are not working) - which maybe will resolved in the future.
-
-To install Monterey you have to edit your EFI/OC/config.plist and change SystemProductName to ```MacBookAir7,1```. After install change to ```MacBookPro6,2``` to get CPU power management working.
-
-
-## What's working - tested on macOS Monterey 12.3.1 ✅
-- [x] CPU Power Management. Thanks to the patched LPC device-id ```pci8086,3b07``` -> ```pci8086,3b09``` and setting SystemProductName to MacBookPro6,2 native power management through appleLPC is fully working like on oryginal MacBookPro6,2. CPU speedstep is working, Turbo Boost is also working - my CPU clock exceeds 3 GHz when needed.
-From macOS 12.3 Beta 1 an additional kext ```ASPP-Override.kext``` id needed. More information at this [link](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/resources/build.py#L177)
-- [x] Intel HD graphics with QE/CI acceleration
-- [x] USB ports
-- [x] Intel WiFi - thanks to AirportItlwm.kext
-- [x] Speakers, headphones
-- [x] Internal Microphone
-- [x] Battery indicator
-- [x] Trackpad is working (trackpoint sometimes works, sometimes not)
-- [x] SD card reader
-
-## What's not working ⚠️
-- [ ] WWAN
-- [ ] Bluetooth
-- [ ] Sleep
-- [ ] Rebooting
-- [ ] VGA port
-- [ ] Internal Camera
-
-
-<img src="/images/ThinkPad-X201-macOS-Monterey.jpg" alt="ThinkPad-X201-macOS-Monterey" height="70%" width="70%">
 
 # Special thanks for cooperation, inspiration, great software and documentation to:
 - [jamesfawcett](https://github.com/jamesfawcett)
